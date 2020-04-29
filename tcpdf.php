@@ -1,6 +1,7 @@
 <?php
 
 require_once "config.php";
+require_once "inline-html.php";
 
 session_start();
 
@@ -28,14 +29,26 @@ if(!empty($template))
     $obj_pdf->setPrintHeader(false);
     $obj_pdf->setPrintFooter(false);
     $obj_pdf->SetAutoPageBreak(TRUE, 10);
-    $obj_pdf->SetFont('helvetica', '', 12);
+
+    $obj_pdf->SetFont('helvetica', '', 12, false);
+
+    // $font_name = 'sovorakan';
+    // TCPDF_FONTS::addTTFfont(realpath('tcpdf/fonts') . DIRECTORY_SEPARATOR . $font_name . '.ttf', 'TrueTypeUnicode', '', 32);
+    // $obj_pdf->SetFont($font_name, '', 14, '', false);
+
     $obj_pdf->AddPage();
 
     $content = '';
     $content .= $template;
     $file_name = time() . '.pdf';
 
-    $obj_pdf->writeHTML($content);
+    $html = injectHtml(Array(
+        'header_1' => "Some text here 1",
+        'header_2' => "Some text here 2",
+        'image_1' => realpath('image-examples') . DIRECTORY_SEPARATOR . 'example.jpg'
+    ));
+
+    $obj_pdf->writeHTML($html);
     $obj_pdf->Output(realpath('uploads') . DIRECTORY_SEPARATOR . $file_name, 'F');
     $obj_pdf->Output($file_name, 'I');
 }
