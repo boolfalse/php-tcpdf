@@ -39,6 +39,8 @@ PHP AUTH: This is a simple boilerplate for PHP Auth.
 - [TCPDF font converter e.g. for Magento Extension pdfPRINT](http://fonts.snm-portal.com/)
 - [Using Unicode with TCPDF](https://stackoverflow.com/questions/18200919/using-unicode-with-tcpdf)
 - [encode-utf-8-in-tcpdf](https://stackoverflow.com/questions/52286964/how-to-encode-utf-8-in-tcpdf)
+- [tcpdf-fonts](https://stackoverflow.com/questions/27607953/)
+- [utf-8-all-the-way-through](https://stackoverflow.com/questions/279170/utf-8-all-the-way-through)
 - [Font changed](https://stackoverflow.com/a/55722814/7574023)
 
 ### TODOs
