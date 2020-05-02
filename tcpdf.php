@@ -30,11 +30,7 @@ if(!empty($template))
     $obj_pdf->setPrintFooter(false);
     $obj_pdf->SetAutoPageBreak(TRUE, 10);
 
-    $obj_pdf->SetFont('helvetica', '', 12, false);
-
-    // $font_name = 'sovorakan';
-    // TCPDF_FONTS::addTTFfont(realpath('tcpdf/fonts') . DIRECTORY_SEPARATOR . $font_name . '.ttf', 'TrueTypeUnicode', '', 32);
-    // $obj_pdf->SetFont($font_name, '', 14, '', false);
+    $obj_pdf->SetFont('dejavusans', '', 12, false);
 
     $obj_pdf->AddPage();
 
